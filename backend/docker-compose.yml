@@ -1,0 +1,12 @@
+services:
+  db:
+    image: ankane/pgvector:latest
+    container_name: halo-db  # 컨테이너 이름 변경
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: halo_db    # DB 이름 변경
+    volumes:
+      - ./halo_postgres_data:/var/lib/postgresql/data
